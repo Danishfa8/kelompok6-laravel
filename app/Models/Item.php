@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     use HasFactory;
-    protected $fillable = ['kode_pajak', 'nama_pajak','deskripsi','tarif_pajak','tanggal_berlaku'];
+    protected $guarded = [];
+
+    // public $timestamps = false;
 
     public function user() 
     {

@@ -18,9 +18,11 @@ class CreateItemsTable extends Migration
             $table->integer('user_id')->index();
             $table->string('kode_pajak', 10)->nullable(false);
             $table->string('nama_pajak', 100)->nullable(false);
+            $table->string('jenis_pajak', 100);
             $table->text('deskripsi')->nullable();
             $table->decimal('tarif_pajak', 20)->nullable(false);
             $table->date('tanggal_berlaku')->nullable(false);
+            $table->foreign('nama_pajak')->references('id')->on('jenis_pjk');
             $table->timestamps();
         });
     }
